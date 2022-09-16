@@ -13,8 +13,7 @@ import time
 
 from .data_simulation import generate_omega_bias, feature_matrix
 
-def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_error = None, tol_coeff = None) #, par1 = None,par2 = None,
-#                                        distribution = None,bool_bias = None, sparsity = None):
+def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_error = None, tol_coeff = None) 
     
     """Implimentation of the Hard Ridge Random Feature Expansion algorithm
     **HARFE**
@@ -93,16 +92,12 @@ def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_erro
     sparsity: int, (default: None)
          Number of nonzeros in each column of the weight matrix. If None is given, use sparsity  = 2
     
-    verbosity : int, (default: 0)
-        If 1 will print out feature info throughout the execution of the
-        function. If 2, will print out progress and parameters in addition to
-        feature info. Defaults to 0 (no printing).
     """
 
     
     # Define useful constants
     m = len(y)       # Number of data points
-    d = int(x.shape[1])
+    d = int(x.shape[1]) #dimension of input data
 
     # Default parameter Handeling
     if N is None:
