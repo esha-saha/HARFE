@@ -60,48 +60,50 @@ def harfe(y,c0 = None,s = None,tot_iter = None,thresh = None,mu = None,lam = Non
     
     Hyperparameters
     ---------------
-    N_features : int, (default: None)
-        Number of features to generate. If None is given, will use 10*len(y)
-    eps : float, (default: None)
-        Radius of a feature's neighbourhood in time-frequency space. If None is
-        given, will default to: 0.2 * (t[-1] - t[0])
-    max_frq : float, (default: None)
-        Maximum possible frequency a feature could have. If None is given, will
-        use half the sample rate: 0.5 * (len(t)+1) / (t[-1] - t[0])
-    w : float, (default: 0.1)
-        Window size of the features in seconds. Defaults to 0.1s or 100ms.
-    r : float, (default: 0.05)
-        Maximum relative error in the representation of the signal. Defaults to
-        5%. Should be between [0.01, 0.5] for sensible results.
-    threshold : float, (default: None)
-        Bottom quantile of nonzero-coefficients to prune after the
-        coefficients are learned. If None is given, will skip this step. Should
-        be in the range [0, 1].
-    frq_scale : float, (default: None)
-        Amount to scale the frequencies of the features before the clustering
-        algorithm. If None is given, will default to: (t[-1] - t[0]) / max_frq
-    min_samples : int, (default: 4)
-        Number of features in a neighbourhood required to be considered a core
-        point in the clustering algorithm. Should be 3, 4, or 5 for sensible
-        results.
-    seed : int, (default: None)
-        Seed to use in the random generation of the features. This is useful for
-        repeatability. If None is given, a random seed will be used.
-    n_modes : int, (default: None)
-        Number of modes in the input signal if known. Will merge extra modes
-        with the smallest L2-norm so at most n_modes are returned. If None
-        is given, will not merge any modes.
+    N : int, (default: None)
+        Number of features to generate. If None is given, use 10*len(y) as default
+    s : int, (default: None)
+        Sparsity level to be used for hard thresholding. If None is given, use int(0.15*N) as default
+    c0 : ndarray, (N,)
+        Initial vector c. If None is given, use c0 = np.zeros(N) as default
+    mu : float, (default: None)
+        Step size for first step of the algorithm. If None is given, default is mu = 0.1
+    thres : float, (default: None)
+        Threshold for convergence. If None is given, use thresh = 1e-3 as default
+    lam: float, (default: None)
+        Regularization parameter for the l2 min problem. If None os given, default is lam = 0.0001??????????
+    
     verbosity : int, (default: 0)
         If 1 will print out feature info throughout the execution of the
         function. If 2, will print out progress and parameters in addition to
         feature info. Defaults to 0 (no printing).
-    return_features : bool, (default: False)
-        If True, will return the learned modes in addition to weights,
-        tau, frq, and phs of the features, and the features' label (which mode
-        each feature belongs to).
-    cutoff : float, (default: None)
-        If given, will *not* use DBSCAN to cluster features and instead separate
-        features into two modes: features with frequency above and below cutoff."""
+    """
+
+    
+    # Define useful constants
+    m = len(y)       # Number of data points
+
+    # Default parameter Handeling
+    if N is None:
+        N = 10 * m
+        
+    if s is None:
+        s = int(0.15 * m)
+        
+    if mu is None:
+        mu = 0.1
+        
+    if lam is None:
+        lam = 0.0001
+    
+    if thresh is None:
+        thresh = 1e-3
+        
+    if c0 is None:
+        t = np.zeros(N)
+    elif len(c0) != N:
+        raise ValueError('Initial c0 should be of size N')
+
     
     error = np.zeros(tot_iter)
     b = b.flatten()
