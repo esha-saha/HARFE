@@ -1,7 +1,7 @@
 # HARFE : Hard Ridge Random Feature Expansion
 ## Problem Statement
 
-Given data $\{(\mathbf{x}_k,y_k)\}_{k=1}^m$ such that $x_k\in\mathbb{R}^d$ and $d$ is large. Find function $f$ such that $f(\mathbf{x}_k)\approx y_k$ for all $k$.
+Given data $\{(\textbf{x}_k,y_k)\}_{k=1}^m$ such that $x_k\in\mathbb{R}^d$ and $d$ is large. Find function $f$ such that $f(\mathbf{x}_k)\approx y_k$ for all $k$.
 Assume that f is of the form f(x) = c^T\phi(Wx+b) where W and b are weights and bias sampled randomly and fixed.
     
     Method
