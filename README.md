@@ -8,7 +8,7 @@ Assume that $f$ is of the form $f(x) = c^T \phi(Wx+b)$ where $W$ and $b$ are wei
 
 HARFE solves the problem of representing $y$ with a sparse random feature basis i.e.,
     
-$y(t) \approx \sum_j (c_j) * \phi(<x,w_j> + b_j))$, where phi is a nonlinear activation function. 
+$y(t) \approx \sum_j (c_j) * \phi(\langle x,\omega_j\rangle + b_j))$, where phi is a nonlinear activation function. 
     
     Let A = phi(Wx+b). Then the vector c is obtained by solving the minimization problem,
     min_c ||Ac-y||_2^2 + m*lam||c||_2^2
