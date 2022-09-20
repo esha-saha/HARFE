@@ -32,3 +32,5 @@ Start with $s$-sparse vector $c^0 = 0$ and iterate:
 Created by Esha Saha in September 2022 based on HARFE algorithm.
 
 # Contact
+
+Email esaha@uwaterloo.ca if you have any questions, comments or suggestions.
