@@ -31,17 +31,9 @@ Start with $s$-sparse vector $c^0 = 0$ and iterate:
 
 Download the source by clicking Code -> Download ZIP and run the notebooks in the tests file.
 
-## About 
+### Contact and citation
 
-Created by Esha Saha in September 2022 based on HARFE algorithm.
-
-### Contact
-
-Email esaha@uwaterloo.ca if you have any questions, comments or suggestions.
-
-### Citation
-
-Please cite the associated paper if you found the code useful in any way:
+Email esaha@uwaterloo.ca if you have any questions, comments or suggestions. Please cite the associated paper if you found the code useful in any way:
 
     @misc{https://doi.org/10.48550/arxiv.2202.02877,
       doi = {10.48550/ARXIV.2202.02877},
