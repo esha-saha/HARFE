@@ -10,12 +10,13 @@ HARFE solves the problem of representing $y$ with a sparse random feature basis 
     
 $y(t) \approx \sum_j (c_j) * \phi(\langle x,\omega_j\rangle + b_j))$, where phi is a nonlinear activation function. 
     
-    Let A = phi(Wx+b). Then the vector c is obtained by solving the minimization problem,
-    min_c ||Ac-y||_2^2 + m*lam||c||_2^2
-    where lam is the regularization hyperparameter.
+Let $A = \phi(Wx+b)$. Then the vector $c$ is obtained by solving the minimization problem,
+$\min_c$ $||Ac-y||_2^2$ + $m*\lambda ||c||_2^2$
+where \lambda is the regularization hyperparameter.
     
-    Solve this iteratively using the Hard Thresholding Pursuit algorithm i.e.,
-    Start with s-sparse vector c^0 = 0 and iterate:
+We solve this iteratively using the Hard Thresholding Pursuit algorithm i.e.,
+
+Start with $s$-sparse vector $c^0 = 0$ and iterate:
     
-    S^{n+1} = {s largest entry indices of (1-mu*m*lam)*c^n + mu A^*(y - A c^n) }
-    c^{n+1}= argmin {||b - Az||_2^2 + m*lam||z||_2^2, supp(z) subseteq S^{n+1}}.
+1. $S^{n+1}$ = $\{$ $s$ largest entry indices of $(1-\mu*m*\lambda)*c^n + \mu A^*(y - A c^n) \}$
+2. $c^{n+1}$ = $\argmin \{||b - Az||_2^2 + m*\lambda ||z||_2^2,$ $\supp(z) \subseteq S^{n+1}\}$.
