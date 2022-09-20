@@ -12,15 +12,15 @@ HARFE solves the problem of representing $y$ with a sparse random feature basis 
 $y \approx \sum_j (c_j) * \phi(\langle \mathbf{x},\omega_j\rangle + b_j))$, where phi is a nonlinear activation function. 
     
 Let $A = \phi(W\mathbf{x}+b)$. Then the vector $\mathbf{c}$ is obtained by solving the minimization problem,
-$\min_c$ $||Ac-y||_2^2$ + $m$ $\lambda$ $||c||_2^2$
-where \lambda is the regularization hyperparameter.
+$\min_c$ $||A\mathbf{c}-y||_2^2$ + $m$ $\lambda$ $||\mathbf{c}||_2^2$
+where $\lambda$ is the regularization hyperparameter.
     
 We solve this iteratively using the Hard Thresholding Pursuit algorithm i.e.,
 
-Start with $s$-sparse vector $c^0 = 0$ and iterate:
+Start with $s$-sparse vector $\mathbf{c}^0 = 0$ and iterate:
     
-1. $S^{n+1}$ = { $s$ largest entry indices of (1 - $\mu$ $m$ $\lambda$) $c^n$ + $\mu$ $A^{*}$ $(y - A c^n)$ }
-2. $c^{n+1}$ = argmin { $||b - Az||_2^2$ + $m$ $\lambda$ $||z||_2^2$, supp(z) $\subset$ $S^{n+1}$ }.
+1. $S^{n+1}$ = { $s$ largest entry indices of (1 - $\mu$ $m$ $\lambda$) $\mathbf{c}^n$ + $\mu$ $A^{*}$ $(y - A \mathbf{c}^n)$ }
+2. $c^{n+1}$ = argmin { $||b - A\mathbf{z}||_2^2$ + $m$ $\lambda$ $||\mathbf{z}||_2^2$, supp($\mathbf{z}$) $\subset$ $S^{n+1}$ }.
 
 
 ## Examples
