@@ -20,3 +20,15 @@ Start with $s$-sparse vector $c^0 = 0$ and iterate:
     
 1. $S^{n+1}$ = { $s$ largest entry indices of (1 - $\mu$ $m$ $\lambda$) $c^n$ + $\mu$ $A^{*}$ $(y - A c^n)$ }
 2. $c^{n+1}$ = argmin { $||b - Az||_2^2$ + $m$ $\lambda$ $||z||_2^2$, supp(z) $\subset$ $S^{n+1}$ }.
+
+
+## Examples
+
+1. func_harfe.ipynb: Exhibits approximation of Friedman function of type 1 using HARFE.
+2. data_harfe.ipynb: Exhibits function approximation of propulsion dataset using HARFE.
+
+## About 
+
+Created by Esha Saha in September 2022 based on HARFE algorithm.
+
+# Contact
