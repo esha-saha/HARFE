@@ -20,7 +20,7 @@ We solve this iteratively using the Hard Thresholding Pursuit algorithm i.e.,
 Start with $s$-sparse vector $\mathbf{c}^0 = 0$ and iterate:
     
 1. $S^{n+1}$ = { $s$ largest entry indices of (1 - $\mu$ $m$ $\lambda$) $\mathbf{c}^n$ + $\mu$ $A^{*}$ $(y - A \mathbf{c}^n)$ }
-2. $c^{n+1}$ = argmin { $||b - A\mathbf{z}||_2^2$ + $m$ $\lambda$ $||\mathbf{z}||_2^2$, supp($\mathbf{z}$) $\subset$ $S^{n+1}$ }.
+2. $c^{n+1}$ = argmin { $||b - A\mathbf{z}||_2^2$ + $m$ $\lambda$ $||\mathbf{z}||_2^2$, supp( $\mathbf{z}$ ) $\subset$ $S^{n+1}$ }.
 
 
 ## Examples
