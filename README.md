@@ -18,5 +18,5 @@ We solve this iteratively using the Hard Thresholding Pursuit algorithm i.e.,
 
 Start with $s$-sparse vector $c^0 = 0$ and iterate:
     
-1. $S^{n+1}$ = { $s$ largest entry indices of $(1-\mu*m*\lambda)*c^n + \mu A^*(y - A c^n) \}$
+1. $S^{n+1}$ = { $s$ largest entry indices of $(1-\mu*m*\lambda)*c^n$ + $\mu A^*(y - A c^n)$ }
 2. $c^{n+1}$ = argmin { $||b - Az||_2^2$ + $m*\lambda ||z||_2^2$, supp(z) $\subset$ $S^{n+1}$ }.
