@@ -31,7 +31,7 @@ Start with $s$-sparse vector $c^0 = 0$ and iterate:
 
 Download the source by clicking Code -> Download ZIP and run the notebooks in the tests file.
 
-### Contact and citation
+## Contact and citation
 
 Email esaha@uwaterloo.ca if you have any questions, comments or suggestions. Please cite the associated paper if you found the code useful in any way:
 
