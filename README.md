@@ -27,6 +27,10 @@ Start with $s$-sparse vector $c^0 = 0$ and iterate:
 1. func_harfe.ipynb: Exhibits approximation of Friedman function of type 1 using HARFE.
 2. data_harfe.ipynb: Exhibits function approximation of propulsion dataset using HARFE.
 
+## Installation
+
+Download the source by clicking Code -> Download ZIP and run the notebooks in the tests file.
+
 ## About 
 
 Created by Esha Saha in September 2022 based on HARFE algorithm.
