@@ -12,7 +12,7 @@ def main():
 
     setup(
         name='harfe',
-        url='https://github.com/njericha/srmdpy',
+        url='https://github.com',
         author='Esha Saha',
         author_email='esaha@uwaterloo.ca',
         packages=['harfe'],
