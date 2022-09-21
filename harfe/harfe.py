@@ -10,7 +10,7 @@ import logging
 import numpy as np
 import time
 
-def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_error = None, tol_coeff = None):
+def harfe(y, A, N = None, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_error = None, tol_coeff = None):
     
     """Implimentation of the Hard Ridge Random Feature Expansion algorithm
     **HARFE**
@@ -94,7 +94,7 @@ def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_erro
     
     # Define useful constants
     m = len(y)       # Number of data points
-    d = int(x.shape[1]) #dimension of input data
+    d = int(A.shape[1]) #dimension of input data
 
     # Default parameter Handeling
     if N is None:
@@ -120,15 +120,13 @@ def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_erro
         
         
     if c0 is None:
-        t = np.zeros(N)
+        c0 = np.zeros(N)
     elif len(c0) != N:
         raise ValueError('Initial c0 should be of size N')
         
     
-
-    
     error = np.zeros(tot_iter)
-    y = b.flatten()
+    y = y.flatten()
     C = np.zeros((A.shape[1],tot_iter))
     C[:,0] = c0
     i = 0
@@ -147,7 +145,6 @@ def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_erro
         c_pruned = np.matmul(np.linalg.pinv((z2_pruned + lam*np.identity(z2_pruned.shape[1])),rcond=1e-15)
                                  ,z1_pruned)
         c_pruned = c_pruned.flatten()
-        erlst = 'nd'
         C[idx,i+1] = c_pruned
         error[i+1] = np.linalg.norm(np.matmul(A,C[:,i+1]).flatten()-y)/np.linalg.norm(y)
         iter_req = i+1
@@ -168,5 +165,6 @@ def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_erro
                 
     end_time = time.time()  
 
-    return C[:,iter_req],error[0:iter_req+1],iter_req+1,erlst,end_time - start_time
+    return C[:,iter_req],error[0:iter_req+1],iter_req+1,end_time - start_time
+
 
