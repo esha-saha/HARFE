@@ -7,8 +7,6 @@ Created on Sat Jul 10 10:12:21 2021
 """
 
 import numpy as np
-import matplotlib.pyplot as plt
-from numpy import matlib
 
 def generate_omega_bias(rows,columns,weight,par1,par2,distribution,bool_bias,sparsity):
     mask = np.zeros(shape=(rows,columns)) #(N,d)
