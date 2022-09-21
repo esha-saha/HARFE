@@ -1,4 +1,14 @@
 # HARFE : Hard Ridge Random Feature Expansion
+
+## Installation
+
+Use the steps below for a local installation of HARFE. Requires Python >= 3.6.
+
+```
+$ git clone https://github.com/esaha2703/HARFE.git
+$ pip install - e .
+```
+
 ## Problem Statement
 
 Given data $(x_k, y_k)_{k=1}^m$ such that $\mathbf{x}_k\in\mathbb{R}^d$ and $y_k\in\mathbb{R}$ where $d$ is large. 
@@ -28,9 +38,6 @@ Start with $s$-sparse vector $\mathbf{c}^0 = 0$ and iterate:
 1. func_harfe.ipynb: Exhibits approximation of Friedman function of type 1 using HARFE.
 2. data_harfe.ipynb: Exhibits function approximation of propulsion dataset using HARFE.
 
-## Installation
-
-Download the source by clicking Code -> Download ZIP and run the notebooks in the tests file.
 
 ## Contact and citation
 
