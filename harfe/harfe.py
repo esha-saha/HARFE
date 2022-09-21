@@ -43,8 +43,6 @@ def harfe(y, A, N = None, c0 = None,s = None,mu = None,lam = None,tot_iter = Non
     A: matrix of size (N,d)
         Random feature matrix of the form phi(Wx + b)
         
-    x : numpy array of size (m,d)
-        The input data
         
         
     Output
