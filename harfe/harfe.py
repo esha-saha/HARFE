@@ -10,8 +10,6 @@ import logging
 import numpy as np
 import time
 
-from .data_simulation import generate_omega_bias, feature_matrix
-
 def harfe(y, A, c0 = None,s = None,mu = None,lam = None,tot_iter = None,tol_error = None, tol_coeff = None):
     
     """Implimentation of the Hard Ridge Random Feature Expansion algorithm
