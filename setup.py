@@ -7,17 +7,17 @@ def main():
     with io.open("README.md", encoding="utf8") as f:
         long_description = f.read().strip()
 
-    with open("requirements.txt") as f:
-            required = f.read().splitlines()
-
     setup(
         name='harfe',
-        url='https://github.com',
+        url='https://github.com/esaha2703/HARFE',
         author='Esha Saha',
         author_email='esaha@uwaterloo.ca',
         packages=['harfe'],
-        install_requires=required,
+        install_requires=[
+            "numpy",
+        ],
         version=VERSION,
+        python_requires=">=3.6",
         license='MIT',
         description='A Python implimentation of Hard Ridge Random Feature Expansion',
         long_description=long_description,
