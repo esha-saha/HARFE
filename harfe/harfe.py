@@ -67,25 +67,14 @@ def harfe(y, A, N = None, c0 = None,s = None,mu = None,lam = None,tot_iter = Non
     mu : float, (default: None)
         Step size for first step of the algorithm. If None is given, default is mu = 0.1
     lam: float, (default: None)
-        Regularization parameter for the l2 min problem. If None os given, default is lam = 0.0001??????????
+        Regularization parameter for the l2 min problem. If None os given, default is lam = 0.0001
     tot_iter: int, (default: None)
         Maximum total iterations. If None is given, default is 200
     tol_error : float, (default: None)
         Threshold for convergence. If None is given, use thresh = 5e-3 as default
     tol_coeff : float, (default: None)
         Threshold for convergence. If None is given, use thresh = 1e-5 as default
-    weight: float, (default: None)
-        constant to be multiplied with the weights. If None is given, use weight = 1
-    par1: float, (default: None) 
-        First parameter for sampling the weights. If None is given, use par1 = -1
-    par2: float, (default: None)
-        Second parameter for sampling the weights. If None is given, use par1 = 1
-    distribution: str, (default: None)
-         Distribution for sampling the weighst and bias. If None is given, use distribution = 'nor-uni'
-    bias: bool, (default: None)
-         Option if bias is wanted or not. If None is given, use bias = True
-    sparsity: int, (default: None)
-         Number of nonzeros in each column of the weight matrix. If None is given, use sparsity  = 2
+    
     
     """
 
